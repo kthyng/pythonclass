@@ -26,8 +26,7 @@ def test_array_mean():
 
     a = np.random.randn((1000))  # test for vector
     b = np.random.randn(1000, 100)  # test for array
-    c = b.copy()
-    c[0, 0] = np.nan
+    c = np.vstack((b, np.nan*np.ones(1, 100)))
 
     assert hw1.array_mean(a) == a.mean(), 'array_mean does not work for a vector'
     assert hw1.array_mean(b) == b.mean(), 'array_mean does not work for a 2D array'
