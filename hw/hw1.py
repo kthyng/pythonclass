@@ -11,11 +11,11 @@ def make_array():
 
     a = np.ones((1000, 10))
 
-    return list(a)
+    return a
 
 
 def array_mean(a):
     '''Return the mean of the input array
     '''
 
-    return a.mean()
+    return np.nanmean(a)
